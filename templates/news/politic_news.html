@@ -1,0 +1,20 @@
+{% extends 'news/base.html' %}
+{% load static %}
+
+{% block title %}Siyosiy xabarlar{% endblock title %}
+
+{% block content %}
+
+    {% for news in politic_news %}
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8">
+                    <a href="{{ news.get_absolute_url }}"><img src="{{ news.image.url }}" alt="{{ news.title }}" width="50%">
+                    <h3>{{ news.title }}</h3>
+                    </a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+
+{% endblock content %}
